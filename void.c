@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 #include "void.h"
 
 void Tableau(char tableau[3][3]) {
@@ -13,11 +14,13 @@ void Tableau(char tableau[3][3]) {
     printf("\n\n");
 }
 
-void Jouer(char tableau[3][3], int ligne, int colonne, char symbole) {
+bool Jouer(char tableau[3][3], int colonne, int ligne, char symbole) {
     if (tableau[ligne][colonne] == ' ') {
         tableau[ligne][colonne] = symbole;
+        return true;
     } else {
-        printf("Case déjà prise \n");
+        printf("Case déjà prise\n");
+        return false;
     }
 }
 
@@ -26,10 +29,10 @@ void IA(char tableau[3][3]) {
     srand(time(NULL));
 
     do {
-        ligne = rand() % 3;
         colonne = rand() % 3;
+        ligne = rand() % 3;
     } while (tableau[ligne][colonne] != ' ');
 
-    tableau[ligne][colonne] = 'O'; // L’IA joue un O
-    printf("L'IA joue en (%d, %d)\n", ligne, colonne);
+    tableau[ligne][colonne] = 'O';
+    printf("L'IA joue en colonne %d, ligne %d\n", colonne + 1, ligne + 1);
 }
