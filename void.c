@@ -25,7 +25,24 @@ bool Jouer(char tableau[3][3], int colonne, int ligne, char symbole) {
     }
 }
 
+// Vérifie s’il reste au moins une case libre
+bool CasesLibres(char tableau[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (tableau[i][j] == ' ')
+                return true;
+        }
+    }
+    return false;
+}
+
 void IA(char tableau[3][3]) {
+    // Vérifie d’abord s’il reste des cases libres
+    if (!CasesLibres(tableau)) {
+        printf("Égalité\n");
+        exit(0); 
+    }
+
     int ligne, colonne;
     srand(time(NULL));
 
@@ -35,6 +52,5 @@ void IA(char tableau[3][3]) {
     } while (tableau[ligne][colonne] != ' ');
 
     tableau[ligne][colonne] = 'O';
-    printf("L'IA joue en colonne %d, ligne %d\n", colonne + 1, ligne + 1);
+    printf("L'IA joue en colonne %d, ligne %d\n", colonne + 1, ligne + 1); // j'ai ajouté +1 pour retablir les vrai valeurs et non pas (0-2)
 }
-

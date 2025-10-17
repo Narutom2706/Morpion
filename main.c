@@ -27,7 +27,7 @@ int main() {
                 continue;
             }
 
-            coupValide = Jouer(tableau, colonne - 1, ligne - 1, 'X'); // j'ai ajouté -1 pour permettre de passé de (0-2) à (1-3) car je trouve ça plus ludique pour le joueur
+            coupValide = Jouer(tableau,  colonne - 1, ligne - 1, 'X'); // j'ai ajouté -1 pour permettre de passé de (0-2) à (1-3) car je trouve ça plus ludique pour le joueur
         }
 
         Tableau(tableau);
@@ -35,7 +35,7 @@ int main() {
         IA(tableau);
         Tableau(tableau);
 
-        printf("Voulez-vous continuer ? (o/n) : "); // ! ne verifie pas si on a gagné
+        printf("Voulez-vous continuer ? (o/n) : "); // ! ne verifie pas si on a gagné (j'en ai marre, a l'aide)
         scanf(" %c", &continuer);
     }
     return 0;
