@@ -10,3 +10,11 @@ void Tableau(char tableau[3][3]) {
     }
     printf("\n\n");
 }
+
+void Jouer(char tableau[3][3], int ligne, int colonne, char symbole) {
+    if (tableau[ligne][colonne] == ' ') {
+        tableau[ligne][colonne] = symbole;
+    } else {
+        printf("Case deja prise\n");
+    }
+}
