@@ -20,7 +20,7 @@ bool Jouer(char tableau[3][3], int colonne, int ligne, char symbole) {
         tableau[ligne][colonne] = symbole;
         return true;
     } else {
-        printf("Case déjà prise !\n");
+        printf("Case déjà prise\n");
         return false;
     }
 }
