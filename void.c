@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "void.h"
 
 void Tableau(char tableau[3][3]) {
@@ -15,6 +17,19 @@ void Jouer(char tableau[3][3], int ligne, int colonne, char symbole) {
     if (tableau[ligne][colonne] == ' ') {
         tableau[ligne][colonne] = symbole;
     } else {
-        printf("Case deja prise\n");
+        printf("Case déjà prise \n");
     }
+}
+
+void IA(char tableau[3][3]) {
+    int ligne, colonne;
+    srand(time(NULL));
+
+    do {
+        ligne = rand() % 3;
+        colonne = rand() % 3;
+    } while (tableau[ligne][colonne] != ' ');
+
+    tableau[ligne][colonne] = 'O'; // L’IA joue un O
+    printf("L'IA joue en (%d, %d)\n", ligne, colonne);
 }

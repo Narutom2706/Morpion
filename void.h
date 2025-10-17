@@ -3,5 +3,6 @@
 
 void Tableau(char tableau[3][3]);
 void Jouer(char tableau[3][3], int ligne, int colonne, char symbole);
+void IA(char tableau[3][3]);
 
 #endif
