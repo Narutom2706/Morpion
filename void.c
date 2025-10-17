@@ -17,7 +17,7 @@ void Jouer(char tableau[3][3], int ligne, int colonne, char symbole) {
     if (tableau[ligne][colonne] == ' ') {
         tableau[ligne][colonne] = symbole;
     } else {
-        printf("Case déjà prise \n");
+        printf("Case déjà prise \n"); // attention l'ia joue si on se trompe --> corriger le probleme
     }
 }
 
@@ -33,3 +33,4 @@ void IA(char tableau[3][3]) {
     tableau[ligne][colonne] = 'O'; // L’IA joue un O
     printf("L'IA joue en (%d, %d)\n", ligne, colonne);
 }
+
